@@ -39,6 +39,6 @@ function getElementByXpath(path) {
 }
 function iamdaone() {
   setTimeout(() => { iamdaone(); }, 100);
-  if (window.location.href == "https://play.ttrockstars.com/game/play/garage") ans();
+  ans();
 }
 iamdaone()
