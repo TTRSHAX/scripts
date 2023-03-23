@@ -1,9 +1,7 @@
 function ans(){
-	//console.log("WORK");
-	q = document.getElementsByClassName("current")[0].innerHTML;
+	try {
+	q = document.querySelector("#version-4\\.22\\.5271028 > ttr-root > ttr-root-app > div > mat-sidenav-container > mat-sidenav-content > div > section > ttr-garage > ttr-game-holder > div > div.game.game-holder-inner.ng-star-inserted > div.pedal-holder > ttr-game-footpedal > section.width-100 > section > section > ttr-game-question > span").innerHTML;
 	text = q.split(" ");
-	time = document.getElementsByClassName("time")[0]
-	if (time != 40 && time != 20){
 		if (q.includes("÷")) {
 			no1 = text[1];
 			op = text[2].split("<!---->")[1];
@@ -24,24 +22,11 @@ function ans(){
 			answer = parseInt(no1) / parseInt(no2);
 		}
 		answer = String(answer);
-		//alert(answer);
 		nol = answer.split('');
-		//alert(nol);
-		//alert(nol.length);
-		if (nol.length == 1){
-			simulateKeydown (48 + parseInt(nol[0]), false, false, false);
+		for (let i = 0; i < nol.length; i++){
+			simulateKeydown (48 + parseInt(nol[i]), false, false, false);
 		}
-		if (nol.length == 2){
-			simulateKeydown (48 + parseInt(nol[0]), false, false, false);
-			simulateKeydown (48 + parseInt(nol[1]), false, false, false);
-		}
-		if (nol.length == 3){
-			simulateKeydown (48 + parseInt(nol[0]), false, false, false);
-			simulateKeydown (48 + parseInt(nol[1]), false, false, false);
-			simulateKeydown (48 + parseInt(nol[2]), false, false, false);
-		}
-		simulateKeydown (13, false, false, false);
-	}
+		simulateKeydown (13, false, false, false);} catch {}
 }
 function simulateKeydown (keycode,isCtrl,isAlt,isShift){
 	var e = new KeyboardEvent( "keydown", { bubbles:true, cancelable:true, char:String.fromCharCode(keycode), key:String.fromCharCode(keycode), shiftKey:isShift, ctrlKey:isCtrl, altKey:isAlt } );
@@ -54,6 +39,6 @@ function getElementByXpath(path) {
 }
 function iamdaone() {
   setTimeout(() => { iamdaone(); }, 100);
-  ans();
+  if (window.location.href == "https://play.ttrockstars.com/game/play/garage") ans();
 }
-if (window.location.href == "https://play.ttrockstars.com/game/play/garage") iamdaone()
+iamdaone()
