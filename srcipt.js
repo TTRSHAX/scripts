@@ -34,9 +34,6 @@ function simulateKeydown (keycode,isCtrl,isAlt,isShift){
         e.keyCodeVal = keycode;
         document.dispatchEvent(e);
 }
-function getElementByXpath(path) {
-  return document.evaluate(path, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-}
 function iamdaone() {
   setTimeout(() => { iamdaone(); }, 100);
   ans();
