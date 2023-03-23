@@ -56,4 +56,4 @@ function iamdaone() {
   setTimeout(() => { iamdaone(); }, 100);
   ans();
 }
-if (window.location.href == "https://play.ttrockstars.com/game/play/garage" || window.location.href == "https://play.ttrockstars.com/game/play/studio") iamdaone()
+if (window.location.href == "https://play.ttrockstars.com/game/play/garage") iamdaone()
