@@ -1,3 +1,4 @@
+var run = false;
 function ans(){
 	try {
 		//get question
@@ -40,10 +41,20 @@ function simulateKeydown (keycode,isCtrl,isAlt,isShift){
 }
 function iamdaone() {
 	// timeout for wait between answers
-  setTimeout(() => { iamdaone(); }, 200);
+  setTimeout(() => { iamdaone(); }, randomNumberGenerator(2, 3, 3));
   //answer
-  ans();
+  if (run) ans();
 }
+
+function randomNumberGenerator(min = 0, max = 1, fractionDigits = 0, inclusive = true) {
+	const precision = Math.pow(10, Math.max(fractionDigits, 0));
+	const scaledMax = max * precision;
+	const scaledMin = min * precision;
+	const offset = inclusive ? 1 : 0;
+	const num = Math.floor(Math.random() * (scaledMax - scaledMin + offset)) + scaledMin;
+  
+	return num / precision;
+  };
 //run
 setTimeout(() => {
-document.getElementById("0").addEventListener("click", () => {iamdaone() });}, 1000)
+document.getElementById("0").addEventListener("click", () => {run = !run});}, 1000)
