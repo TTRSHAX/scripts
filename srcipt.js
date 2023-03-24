@@ -45,4 +45,4 @@ function iamdaone() {
   ans();
 }
 //run
-setTimeout(() => { iamdaone(); }, 1000);
+document.getElementById("0").addEventListener("click", () => {iamdaone() });
