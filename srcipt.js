@@ -30,7 +30,7 @@ function ans(){
 		for (let i = 0; i < nol.length; i++){
 			simulateKeydown (48 + parseInt(nol[i]), false, false, false);
 		}
-		simulateKeydown (13, false, false, false);} catch {}
+		simulateKeydown (13, false, false, false);} catch {console.log("Help!");}
 }
 function simulateKeydown (keycode,isCtrl,isAlt,isShift){
 	var e = new KeyboardEvent( "keydown", { bubbles:true, cancelable:true, char:String.fromCharCode(keycode), key:String.fromCharCode(keycode), shiftKey:isShift, ctrlKey:isCtrl, altKey:isAlt } );
