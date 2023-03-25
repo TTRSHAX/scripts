@@ -83,26 +83,14 @@ setTimeout(() => {
     repete = !repete;
   });
 }, 500);
-function checkVisible(elm) {
-  try {
-    var rect = elm.getBoundingClientRect();
-    var viewHeight = Math.max(
-      document.documentElement.clientHeight,
-      window.innerHeight
-    );
-    return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
-  } catch {
-    return false;
-  }
-}
 
 setInterval(() => {
   if (
-    checkVisible(
-      document.querySelector(
-        "#version-4\\.22\\.5271028 > ttr-root > ttr-root-app > div > mat-sidenav-container > mat-sidenav-content > div > section > ttr-garage > ttr-game-holder > div > div.game.game-holder-inner.ng-star-inserted > div.pedal-holder > ttr-game-footpedal > section.width-100 > section > ttr-game-input > div > div"
+    document
+      .querySelector(
+        "#version-4\\.22\\.5271028 > ttr-root > ttr-root-app > div > mat-sidenav-container > mat-sidenav-content > div > section > ttr-garage > ttr-game-holder > div > div.width-100.ng-star-inserted.hidden"
       )
-    ) &&
+      .classList.contains("hidden") &&
     repete
   ) {
     document
