@@ -84,19 +84,23 @@ setTimeout(() => {
   });
 }, 500);
 function checkVisible(elm) {
-  var rect = elm.getBoundingClientRect();
-  var viewHeight = Math.max(
-    document.documentElement.clientHeight,
-    window.innerHeight
-  );
-  return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
+  try {
+    var rect = elm.getBoundingClientRect();
+    var viewHeight = Math.max(
+      document.documentElement.clientHeight,
+      window.innerHeight
+    );
+    return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
+  } catch {
+    return false;
+  }
 }
 
 setInterval(() => {
   if (
     checkVisible(
       document.querySelector(
-        "#version-4\\.22\\.5271028 > ttr-root > ttr-root-app > div > mat-sidenav-container > mat-sidenav-content > div > section > ttr-garage > ttr-game-holder > div > div > ttr-game-results-details > div > div.flex.flex-col.w-full.justify-center.items-center > div > div.flex-col.max-w-500.flex > div.flex.flex-row.mt-8.stamp > button.flex.w-full.ml-2.max-w-50.items-center.z-50.p-2.md\\:p-4.md\\:py-6.rounded-md.text-white.text-xl.md\\:text-2xl.bg-green-600.play-button.stamp.truncate.ng-star-inserted"
+        "#version-4\\.22\\.5271028 > ttr-root > ttr-root-app > div > mat-sidenav-container > mat-sidenav-content > div > section > ttr-garage > ttr-game-holder > div > div.game.game-holder-inner.ng-star-inserted > div.pedal-holder > ttr-game-footpedal > section.width-100 > section > ttr-game-input > div > div"
       )
     ) &&
     repete
