@@ -66,7 +66,7 @@ function genRand(min, max) {
 
 setInterval(() => {
     iamdaone();
-}, 500);
+}, 400);
 
 setTimeout(() => {
     document.getElementById("0").addEventListener("click", () => {
