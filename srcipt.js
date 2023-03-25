@@ -72,4 +72,5 @@ window.addEventListener('DOMContentLoaded', function () {
     document.getElementById("0").addEventListener("click", () => {
         run = !run
     }, false);
+	console.log("HI");
 });
