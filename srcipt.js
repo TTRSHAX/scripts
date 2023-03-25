@@ -88,7 +88,7 @@ setInterval(() => {
   if (
     !document
       .querySelector(
-        "#version-4\\.22\\.5271028 > ttr-root > ttr-root-app > div > mat-sidenav-container > mat-sidenav-content > div > section > ttr-garage > ttr-game-holder > div > div.width-100.ng-star-inserted.hidden"
+        "#version-4\\.22\\.5271028 > ttr-root > ttr-root-app > div > mat-sidenav-container > mat-sidenav-content > div > section > ttr-garage > ttr-game-holder > div > div.width-100.ng-star-inserted"
       )
       .classList.contains("hidden") &&
     repete
