@@ -73,17 +73,16 @@ setTimeout(() => {
     document.getElementById("0").addEventListener("click", () => {
         run = !run
     }, false);
+    document.getElementById("1").addEventListener("click", () => {
+        repete = !repete;
+    });
 }, 500);
 function checkVisible(elm) {
     var rect = elm.getBoundingClientRect();
     var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
     return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
   }
-document.body.addEventListener("keypress", (e) => {
-    if (e.keycode == 32 && e.shiftKey && e.ctrlKey) {
-        repete = !repete;
-    }
-});
+
 
 setInterval(() => {
     if (
