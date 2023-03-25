@@ -31,7 +31,7 @@ function ans(){
 		for (let i = 0; i < nol.length; i++){
 			simulateKeydown (48 + parseInt(nol[i]), false, false, false);
 		}
-		simulateKeydown (13, false, false, false);} catch {console.log("Help!");}
+		simulateKeydown (13, false, false, false);} catch {}
 }
 function simulateKeydown (keycode,isCtrl,isAlt,isShift){
 	var e = new KeyboardEvent( "keydown", { bubbles:true, cancelable:true, char:String.fromCharCode(keycode), key:String.fromCharCode(keycode), shiftKey:isShift, ctrlKey:isCtrl, altKey:isAlt } );
@@ -41,20 +41,15 @@ function simulateKeydown (keycode,isCtrl,isAlt,isShift){
 }
 function iamdaone() {
 	// timeout for wait between answers
-  setTimeout(() => { iamdaone(); }, randomNumberGenerator(2, 3, 3));
+  setTimeout(() => { iamdaone(); }, genRand(5000,6000));
   //answer
   if (run) ans();
 }
 
-function randomNumberGenerator(min = 0, max = 1, fractionDigits = 0, inclusive = true) {
-	const precision = Math.pow(10, Math.max(fractionDigits, 0));
-	const scaledMax = max * precision;
-	const scaledMin = min * precision;
-	const offset = inclusive ? 1 : 0;
-	const num = Math.floor(Math.random() * (scaledMax - scaledMin + offset)) + scaledMin;
-  
-	return num / precision;
-  };
+function genRand(min, max) {
+    return (Math.random() * (max - min) + min);
+}
 //run
+console.log("HI");
 setTimeout(() => {
-document.getElementById("0").addEventListener("click", () => {run = !run});}, 1000)
+document.getElementById("0").addEventListener("click", () => {run = !run}); iamdaone()}, 1000)
