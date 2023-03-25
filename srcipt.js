@@ -68,9 +68,9 @@ setInterval(() => {
     iamdaone();
 }, 1000);
 
-window.addEventListener('DOMContentLoaded', function () {
+setTimeout(() => {
     document.getElementById("0").addEventListener("click", () => {
         run = !run
     }, false);
 	console.log("HI");
-});
+}, 500);
