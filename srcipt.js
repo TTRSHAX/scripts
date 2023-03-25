@@ -3,7 +3,7 @@ var run = false;
 function ans() {
     try {
         //get question
-        q = document.querySelector("#version-4\\.22\\.5271028 > ttr-root > ttr-root-app > div > mat-sidenav-container > mat-sidenav-content > div > section > ttr-garage > ttr-game-holder > div > div.game.game-holder-inner.ng-star-inserted > div.pedal-holder > ttr-game-footpedal > section.width-100 > section > section > ttr-game-question > span").innerHTML;
+        q = document.getElementsByClassName("notranslate height-100 noselect current")[0].innerHTML;
         //split for digestion
         text = q.split(" ");
         // understand
