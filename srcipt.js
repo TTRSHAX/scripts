@@ -41,6 +41,7 @@ function simulateKeydown (keycode,isCtrl,isAlt,isShift){
 }
 function iamdaone() {
   //answer
+  console.log("DATAA")
   if (run) ans();
 }
 
@@ -48,5 +49,6 @@ function genRand(min, max) {
     return (Math.random() * (max - min) + min);
 }
 //run
+setTimeout(() => { iamdaone(); }, genRand(500,1000))
 setTimeout(() => {
-document.getElementById("0").addEventListener("click", () => {run = !run}); setTimeout(() => { iamdaone(); }, genRand(5000,6000));}, 1000)
+document.getElementById("0").addEventListener("click", () => {run = !run});}, 1000)
