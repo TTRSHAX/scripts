@@ -67,9 +67,10 @@ function genRand(min, max) {
   return Math.random() * (max - min) + min;
 }
 
-const self = document.currentScript;
+const sel = document.currentScript;
+console.log(sel)
   const v = new URLSearchParams(
-    new URL(self.getAttribute('_src')).search,
+    new URL(sel.getAttribute('_src')).search,
   ).get('s');
 
 s = parseInt(w)
