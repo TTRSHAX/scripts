@@ -67,18 +67,13 @@ function genRand(min, max) {
   return Math.random() * (max - min) + min;
 }
 
-const sel = document.currentScript;
-console.log(sel)
-  //const v = new URLSearchParams(
-  //  new URL(sel.getAttribute('_src')).search,
-  //).get('s');
-
-//s = parseInt(w)
-//console.log(s)
+w = window.localStorage.getItem("s")
+s = parseInt(w)
+console.log(s)
 
 setInterval(() => {
   iamdaone();
-}, 225);
+}, s);
 
 setTimeout(() => {
   document.getElementById("0").addEventListener(
