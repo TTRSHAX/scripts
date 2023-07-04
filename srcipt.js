@@ -1,6 +1,18 @@
 var run = false;
 var repete = false;
 
+function getRequests() {
+    var s1 = location.search.substring(1, location.search.length).split('&'),
+        r = {}, s2, i;
+    for (i = 0; i < s1.length; i += 1) {
+        s2 = s1[i].split('=');
+        r[decodeURIComponent(s2[0]).toLowerCase()] = decodeURIComponent(s2[1]);
+    }
+    return r;
+};
+
+var QueryString = getRequests();
+
 function ans() {
   try {
     //get question
@@ -69,7 +81,7 @@ function genRand(min, max) {
 
 setInterval(() => {
   iamdaone();
-}, 225);
+}, parseInt(QueryString["s"]));
 
 setTimeout(() => {
   document.getElementById("0").addEventListener(
