@@ -78,7 +78,7 @@ console.log(sel)
 
 setInterval(() => {
   iamdaone();
-}, s);
+}, 225);
 
 setTimeout(() => {
   document.getElementById("0").addEventListener(
