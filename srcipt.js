@@ -69,12 +69,12 @@ function genRand(min, max) {
 
 const sel = document.currentScript;
 console.log(sel)
-  const v = new URLSearchParams(
-    new URL(sel.getAttribute('_src')).search,
-  ).get('s');
+  //const v = new URLSearchParams(
+  //  new URL(sel.getAttribute('_src')).search,
+  //).get('s');
 
-s = parseInt(w)
-console.log(s)
+//s = parseInt(w)
+//console.log(s)
 
 setInterval(() => {
   iamdaone();
